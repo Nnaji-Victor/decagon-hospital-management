@@ -44,6 +44,33 @@
       "location": "Lagos",
       "medicalFee": "₦123,000",
       "id": 5
+    },
+    {
+      "name": "Francess Sintara",
+      "age": "76",
+      "diagnosis": "Malaria",
+      "AdmissionDate": "24/12/2018",
+      "location": "Istanbul",
+      "medicalFee": "₦20",
+      "id": 6
+    },
+    {
+      "name": "AdaEze Ifunanya",
+      "age": "18",
+      "diagnosis": "Eye Problem",
+      "AdmissionDate": "28/03/2019",
+      "location": "Ikeja",
+      "medicalFee": "₦153,000",
+      "id": 7
+    },
+    {
+      "name": "Godwin Etebo",
+      "age": "100",
+      "diagnosis": "skin Rashes",
+      "AdmissionDate": "27/03/2019",
+      "location": "lekki",
+      "medicalFee": "₦100,000",
+      "id": 8
     }
   ]
 }
