@@ -1,40 +1,49 @@
 {
-    "patients":[
-        {
-            "name":"Airi Satou",
-            "age":"33",
-            "diagnosis": "AIDS",
-            "Admission-Date": "13/06/2019",
-            "location":"Ibadan",
-            "medical-fee": "₦200,000",
-            "id":1
-        },
-        {
-            "name":"Angelica Ramos",
-            "age":"30",
-            "diagnosis": "pox",
-            "Admission-Date": "1/05/2019",
-            "location":"Ajah",
-            "medical-fee": "₦70,000",
-            "id":2
-        },
-        {
-            "name":"Bruno Nash",
-            "age":"70",
-            "diagnosis": "Colon Cancer",
-            "Admission-Date": "19/10/2019",
-            "location":"Abuja",
-            "medical-fee": "₦700,000",
-            "id":3
-        },
-        {
-            "name":"Cedric Kelly",
-            "age":"69",
-            "diagnosis": "Sores",
-            "Admission-Date": "5/12/2019",
-            "location":"Festac",
-            "medical-fee": "₦99,000",
-            "id":4
-        }
-    ]
+  "patients": [
+    {
+      "name": "Airi Satou",
+      "age": "33",
+      "diagnosis": "AIDS",
+      "AdmissionDate": "13/06/2019",
+      "location": "Ibadan",
+      "medicalFee": "₦200,000",
+      "id": 1
+    },
+    {
+      "name": "Angelica Ramos",
+      "age": "30",
+      "diagnosis": "pox",
+      "AdmissionDate": "1/05/2019",
+      "location": "Ajah",
+      "medicalFee": "₦70,000",
+      "id": 2
+    },
+    {
+      "name": "Bruno Nash",
+      "age": "70",
+      "diagnosis": "Colon Cancer",
+      "AdmissionDate": "19/10/2019",
+      "location": "Abuja",
+      "medicalFee": "₦700,000",
+      "id": 3
+    },
+    {
+      "name": "Cedric Kelly",
+      "age": "69",
+      "diagnosis": "Sores",
+      "AdmissionDate": "5/12/2019",
+      "location": "Festac",
+      "medicalFee": "₦99,000",
+      "id": 4
+    },
+    {
+      "name": "Richard Ranson",
+      "age": "23",
+      "diagnosis": "Malaria",
+      "AdmissionDate": "24/12/2018",
+      "location": "Lagos",
+      "medicalFee": "₦123,000",
+      "id": 5
+    }
+  ]
 }
