@@ -1,6 +1,5 @@
 //classes instatiation
-
-
+const ui = new UI();
 
 //eventListeners
 eventListeners();
@@ -13,5 +12,6 @@ function eventListeners(){
 }
 
 function addUsers(e){
-    console.log('button clicked');
+    e.preventDefault();
+    
 }
