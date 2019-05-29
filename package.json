@@ -1,0 +1,25 @@
+{
+  "name": "decagon-hospital-management",
+  "version": "1.0.0",
+  "description": "A hospital management solution",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nnaji-Victor/decagon-hospital-management.git"
+  },
+  "keywords": [
+    "hospital",
+    "management",
+    "crud",
+    "api"
+  ],
+  "author": "Nnaji Chukwujekwu Victor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nnaji-Victor/decagon-hospital-management/issues"
+  },
+  "homepage": "https://github.com/Nnaji-Victor/decagon-hospital-management#readme"
+}
