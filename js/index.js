@@ -22,27 +22,26 @@ function addUsers(e){
        let date = document.querySelector('#clientDate').value;
 
        let result = {
-       "name": clientName,
-       "diagnosis": diagnosis,
-       "location": location,
-       "age": age,
-       "medicalFee": medicalFee,
-       "date": date
-       }
+       name: clientName,
+       age: age,
+       diagnosis: diagnosis,
+       AdmissionDate: date,
+       location: location,
+       medicalFee: medicalFee
+    };
 
-       let response = new XMLHttpRequest();
-       response.open('POST','http://localhost:3000/patients', true);
-
-       response.onload = function(){
-           if(status.ok){
-               let respText = response.responseText;
-           }else{
-               console.log(error);
-           }
-       };
-
-       response.send();
+    let url = 'http://localhost:3000/patients';
+      fetch(url, {
+          method: 'POST',
+          body: JSON.stringify(result),
+          headers:{
+            'Content-Type': 'application/json'
+          }
+      }).then(res => res.json())
+      .then(response => console.log('success:', JSON.stringify(response)))
+      .catch(error => console.error('error', error))
     })
 
 }
+
 
