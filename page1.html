@@ -459,6 +459,55 @@
       </div>
 
       <!----modal-->
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+            <button type="button" class="btn btn-primary btn-lg btn-block">Add Patients</button>
+            <hr>
+            <form>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="clientName">Name</label>
+                <input type="text" class="form-control" id="clientName" value = ""  placeholder="name eg: Henry">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="clientSickness">Type of Sickness</label>
+                <input type="text" class="form-control" id="clientSickness" value = "" placeholder="Sickness">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="clientLocation">Location</label>
+              <input type="text" class="form-control" id="clientLocation"  value = "" placeholder="London">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-2">
+                <label for="clientAge">Age</label>
+                <input type="text" class="form-control" value = "" id="clientAge">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="clientAge">Date</label>
+                  <input class="form-control" type="text"  value = "" placeholder="12/4/2019" id="clientDate">
+              </div>
+              <div class="form-group col-md-4">
+                <label for="clientCost">MedicalFee</label>
+                <input type="text" class="form-control" value = "₦"  id="clientCost">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Client</button>
+          </form>
+    
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
       <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -468,6 +517,7 @@
   <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
   <script src="vendor/js/demo/datatables-demo.js"></script>
   <!--- My custom javascript -->
+  <script src="js/UI.js"></script>
   <script src="js/index.js"></script>
   </body>
 </html>
