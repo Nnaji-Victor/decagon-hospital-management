@@ -21,24 +21,28 @@ function addUsers(e){
        let medicalFee = document.querySelector("#clientCost").value;
        let date = document.querySelector('#clientDate').value;
 
-       let result = `{"name": "${clientName}",
-       "diagnosis": "${diagnosis}",
-       "location": "${location}",
-       "age": "${age}",
-       "medicalFee": "${medicalFee}",
-       "date": "${date}"}`;
+       let result = {
+       "name": clientName,
+       "diagnosis": diagnosis,
+       "location": location,
+       "age": age,
+       "medicalFee": medicalFee,
+       "date": date
+       }
 
-       let resultJson = JSON.parse(result);
-       
-       console.log(JSON.stringify(resultJson))
+       let response = new XMLHttpRequest();
+       response.open('POST','http://localhost:3000/patients', true);
 
-   
+       response.onload = function(){
+           if(status.ok){
+               let respText = response.responseText;
+           }else{
+               console.log(error);
+           }
+       };
+
+       response.send();
     })
 
 }
 
-// "diagnosis": diagnosis,
-//            "location": location,
-//            "age": age,
-//            "medicalFee": medicalFee,
-//            "date": date
