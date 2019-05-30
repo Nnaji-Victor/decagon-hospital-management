@@ -24,6 +24,10 @@ eventListeners();
 //   }
 // }
 
+let count = 0;
+let amount = 0;
+let patient = 0;
+
 function eventListeners(){
     const addbutton = document.querySelector('#addbtn');
     addbutton.addEventListener('click', addUsers);
@@ -35,6 +39,9 @@ function eventListeners(){
 
    const showData = document.querySelector('#dataTable tbody');
     showData.addEventListener('click', displaySingleData);
+
+    const  updateUserBtn = document.querySelector('#dataTable tbody');
+    updateUserBtn.addEventListener('click', updateUser);
 }
 
 function addUsers(e){
@@ -97,7 +104,7 @@ function displayData(){
     <td>${patient.location}</td>
     <td>${patient.age}</td>
     <td>${patient.AdmissionDate}</td>
-    <td class="text-center"><a href="#" id="updatebtn" class="d-none d-sm-inline btn btn-sm btn-warning shadow-sm update">Update</a></td>
+    <td class="text-center"><a href="#" id="clickUpdate"  data-toggle="modal" data-target="#updateModal" class="d-none d-sm-inline btn btn-sm btn-warning shadow-sm update">Update</a></td>
     <td class="text-center"><a href="#" data-toggle="modal" data-target="#deleteModal" id="deletebtn" class="d-none d-sm-inline btn btn-sm btn-danger shadow-sm remove">delete</a></td>
     </tr>
    `
@@ -163,6 +170,108 @@ function displaySingleData(e){
       })
     })
   }
+}
+
+function updateUser(e){
+  e.preventDefault();
+
+  let appendDiv = document.querySelector('#putModal');
+  let id = e.target.parentElement.parentElement.id;
+  let url = 'http://localhost:3000/patients/'+id;
+  fetch(url)
+  .then(function(response) {
+    return response.json();
+  }).then(function(myJson){
+    appendDiv.innerHTML=`
+  <div class="modal fade" id="updateModal" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="btn  btn-lg btn-block text-capitalize">Edit Patient</button>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body" id="ref">
+      <form id="form-selector">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="clientName">Name</label>
+          <input type="text" class="form-control" id="clientName2" value = "${myJson.name}"  placeholder="name eg: Henry Clark" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="diagnosis">Diagnosis</label>
+          <input type="text" class="form-control" id="diagnosis2" value = "${myJson.diagnosis}" placeholder="Diagnosis">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="clientLocation">Location</label>
+        <input type="text" class="form-control" id="clientLocation2"  value = "${myJson.location}" placeholder="London">
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-2">
+          <label for="clientAge">Age</label>
+          <input type="text" class="form-control" value = "${myJson.age}" id="clientAge2">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="clientAge">Date</label>
+            <input class="form-control" type="text"  value = "${myJson.AdmissionDate}" placeholder="12/4/2019" id="clientDate2">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="clientCost">Medical Fee (₦)</label>
+          <input type="text" class="form-control" value = ${myJson.medicalFee}  id="clientCost2" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="clientDescription">Describe Symptoms and conditions</label>
+        <textarea class="form-control" value="${myJson.description}" id="clientDescription2" rows="3"></textarea>
+      </div>
+      <button type="button" id="updatebtn" class="btn btn-primary" value="">Update Patient</button>
+    </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              </div>
+          </div>
+          </div>
+      </div>
+  `;
+
+    let updateBtn = document.querySelector('#updatebtn');
+    updateBtn.addEventListener('click', function(e){
+     document.querySelector('#form-selector').remove();
+      let clientName = document.querySelector('#clientName2').value;
+      let diagnosis = document.querySelector('#diagnosis2').value;
+      let location = document.querySelector("#clientLocation2").value;
+      let age = document.querySelector('#clientAge2').value;
+      let medicalFee = document.querySelector("#clientCost2").value;
+      let date = document.querySelector('#clientDate2').value;
+      let description = document.querySelector('#clientDescription2').value;
+
+
+      let result = {
+      name: clientName,
+      age: age,
+      diagnosis: diagnosis,
+      AdmissionDate: date,
+      location: location,
+      medicalFee: medicalFee,
+      description: description
+   };
+
+   fetch(url, {
+    method: 'PATCH',
+    body: JSON.stringify(result),
+    headers:{
+      'Content-Type': 'application/json'
+    }
+  }).then(res => res.json())
+//   .then(response => console.log('success:', JSON.stringify(response)))
+  .then(
+  ui.displayMessage("patient succesfully added", "success")
+  )
+      })
+  })
+
 }
 
 
