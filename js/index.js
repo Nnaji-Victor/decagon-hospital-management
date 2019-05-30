@@ -66,7 +66,7 @@ function displayData(){
   .then(function(myJson) {
     myJson.forEach(patient => {
     document.querySelector('#append').innerHTML +=
-    `<tr>
+    `<tr id="${patient.id}">
     <td><a href="#">${patient.name}</a></td>
     <td>${patient.diagnosis}</td>
     <td>${patient.location}</td>
@@ -74,7 +74,7 @@ function displayData(){
     <td>${patient.AdmissionDate}</td>
     <td>${patient.medicalFee}</td>
     <td class="text-center"><a href="#" id="updatebtn" class="d-none d-sm-inline btn btn-sm btn-warning shadow-sm update">Update</a></td>
-    <td class="text-center"><a href="#" id="deletebtn" class="d-none d-sm-inline btn btn-sm btn-danger shadow-sm remove">delete</a></td>
+    <td class="text-center"><a href="#" data-toggle="modal" data-target="#deleteModal" id="deletebtn" class="d-none d-sm-inline btn btn-sm btn-danger shadow-sm remove">delete</a></td>
     </tr>
    `
    });
@@ -87,9 +87,25 @@ function displayData(){
 
 function deletePatient(r){
     r.preventDefault();
-   if(r.target.classList.contains('remove')){
-       let a = r.target.
-   }
+    let deletebtn = document.querySelector('#confirmDltBtn');
+
+    deletebtn.addEventListener('click', function(e){
+      if(r.target.classList.contains('remove')){
+        let id = r.target.parentElement.parentElement.id;
+        let url = 'http://localhost:3000/patients/'
+        fetch(url+id,{
+          method: 'DELETE'
+        }).then(()=>{
+          console.log('removed')
+        }).catch(err => {
+          console.log('err')
+        })
+      }
+    })
 }
+
+// function remove(id){
+//   fetch()
+// }
 
 
