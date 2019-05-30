@@ -10,6 +10,9 @@ function eventListeners(){
     const addbutton = document.querySelector('#addbtn');
     addbutton.addEventListener('click', addUsers);
     window.addEventListener('DOMContentLoaded', displayData);
+
+    deleteBtn = document.querySelector('#dataTable tbody');
+    deleteBtn.addEventListener('click', deletePatient);
 }
 
 function addUsers(e){
@@ -62,7 +65,7 @@ function displayData(){
   })
   .then(function(myJson) {
     myJson.forEach(patient => {
-    document.querySelector('tbody').innerHTML +=
+    document.querySelector('#append').innerHTML +=
     `<tr>
     <td><a href="#">${patient.name}</a></td>
     <td>${patient.diagnosis}</td>
@@ -70,8 +73,8 @@ function displayData(){
     <td>${patient.age}</td>
     <td>${patient.AdmissionDate}</td>
     <td>${patient.medicalFee}</td>
-    <td class="text-center"><a href="#" id="updatebtn" class="d-none d-sm-inline btn btn-sm btn-warning shadow-sm">Update</a></td>
-    <td class="text-center"><a href="#" id="deletebtn" class="d-none d-sm-inline btn btn-sm btn-danger shadow-sm">delete</a></td>
+    <td class="text-center"><a href="#" id="updatebtn" class="d-none d-sm-inline btn btn-sm btn-warning shadow-sm update">Update</a></td>
+    <td class="text-center"><a href="#" id="deletebtn" class="d-none d-sm-inline btn btn-sm btn-danger shadow-sm remove">delete</a></td>
     </tr>
    `
    });
@@ -80,6 +83,13 @@ function displayData(){
 
   
 
+}
+
+function deletePatient(r){
+    r.preventDefault();
+   if(r.target.classList.contains('remove')){
+       let a = r.target.
+   }
 }
 
 
