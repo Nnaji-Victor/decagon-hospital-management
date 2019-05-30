@@ -5,9 +5,9 @@
       "age": "23",
       "diagnosis": "Malaria",
       "AdmissionDate": "12/10/2018",
-      "location": "Istanbul",
-      "medicalFee": "20,000",
-      "description": "high temperature and stooling",
+      "location": "lagos",
+      "medicalFee": "20000",
+      "description": "high temperature and constant stooling",
       "id": 1
     },
     {
@@ -15,10 +15,30 @@
       "age": "80",
       "diagnosis": "Astigmatism",
       "AdmissionDate": "12/10/2018",
-      "location": "Istanbul",
-      "medicalFee": "15,000",
-      "description": "stooling and unable to see clearly",
+      "location": "ikoyi",
+      "medicalFee": "15000",
+      "description": "Blind in one eye",
       "id": 2
+    },
+    {
+      "name": "Nancy Phillips",
+      "age": "14",
+      "diagnosis": "Deafness",
+      "AdmissionDate": "24/12/2018",
+      "location": "Lagos Island",
+      "medicalFee": "80000",
+      "description": "Cannot hear anything at all",
+      "id": 3
+    },
+    {
+      "name": "silvia Adamma",
+      "age": "67",
+      "diagnosis": "Herpes Virus",
+      "AdmissionDate": "12/10/2018",
+      "location": "Akwa",
+      "medicalFee": "19000",
+      "description": "STI",
+      "id": 4
     }
   ]
 }

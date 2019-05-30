@@ -26,13 +26,15 @@ eventListeners();
 
 let count = 0;
 let amount = 0;
-let patient = 0;
+let total = 0;
 
 function eventListeners(){
     const addbutton = document.querySelector('#addbtn');
     addbutton.addEventListener('click', addUsers);
 
     window.addEventListener('DOMContentLoaded', displayData);
+
+    window.addEventListener('DOMContentLoaded', updateDashboard);
 
    const  deleteBtn = document.querySelector('#dataTable tbody');
     deleteBtn.addEventListener('click', deletePatient);
@@ -222,7 +224,7 @@ function updateUser(e){
       </div>
       <div class="form-group">
         <label for="clientDescription">Describe Symptoms and conditions</label>
-        <textarea class="form-control" value="${myJson.description}" id="clientDescription2" rows="3"></textarea>
+        <textarea class="form-control" value="" id="clientDescription2" rows="3">${myJson.description}</textarea>
       </div>
       <button type="button" id="updatebtn" class="btn btn-primary" value="">Update Patient</button>
     </form>
@@ -272,6 +274,20 @@ function updateUser(e){
       })
   })
 
+}
+
+function updateDashboard(){
+  let url = 'http://localhost:3000/patients';
+  fetch(url)
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(myJson) {
+    myJson.forEach((patient) => {
+      amount += Number(patient.medicalFee);
+     })
+     document.querySelector('#displayAmount').innerText = "₦"+amount;
+  });
 }
 
 
