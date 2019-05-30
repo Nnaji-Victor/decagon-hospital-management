@@ -1,13 +1,24 @@
 {
   "patients": [
     {
-      "name": "Godwin Etebo",
-      "age": "100",
-      "diagnosis": "skin Rashes",
-      "AdmissionDate": "27/03/2019",
-      "location": "lekki",
-      "medicalFee": "₦100,000",
-      "id": 8
+      "name": "Ngozi Okeke",
+      "age": "35",
+      "diagnosis": "Headache",
+      "AdmissionDate": "24/12/2018",
+      "location": "idi",
+      "medicalFee": "18,000",
+      "description": "Severe pain around the head and neck. Migraine and neck pain",
+      "id": 2
+    },
+    {
+      "name": "Ifeanyi Smith",
+      "age": "23",
+      "diagnosis": "Malaria",
+      "AdmissionDate": "12/10/2018",
+      "location": "Istanbul",
+      "medicalFee": "₦123,000",
+      "description": "hshs",
+      "id": 3
     }
   ]
 }
