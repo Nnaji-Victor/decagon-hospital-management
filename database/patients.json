@@ -1,24 +1,24 @@
 {
   "patients": [
     {
-      "name": "Ngozi Okeke",
-      "age": "35",
-      "diagnosis": "Headache",
-      "AdmissionDate": "24/12/2018",
-      "location": "idi",
-      "medicalFee": "18,000",
-      "description": "Severe pain around the head and neck. Migraine and neck pain",
-      "id": 2
-    },
-    {
-      "name": "Ifeanyi Smith",
+      "name": "Richard Ranson jnr",
       "age": "23",
       "diagnosis": "Malaria",
       "AdmissionDate": "12/10/2018",
       "location": "Istanbul",
-      "medicalFee": "₦123,000",
-      "description": "hshs",
-      "id": 3
+      "medicalFee": "20,000",
+      "description": "high temperature and stooling",
+      "id": 1
+    },
+    {
+      "name": "James Egwu",
+      "age": "80",
+      "diagnosis": "Astigmatism",
+      "AdmissionDate": "12/10/2018",
+      "location": "Istanbul",
+      "medicalFee": "15,000",
+      "description": "stooling and unable to see clearly",
+      "id": 2
     }
   ]
 }
