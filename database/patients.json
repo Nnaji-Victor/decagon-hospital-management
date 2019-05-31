@@ -39,6 +39,16 @@
       "medicalFee": "19000",
       "description": "STI",
       "id": 4
+    },
+    {
+      "name": "David Duke",
+      "age": "35",
+      "diagnosis": "HIV/AIDS",
+      "AdmissionDate": "1/9/2019",
+      "location": "Lagos",
+      "medicalFee": "100000",
+      "description": "AIDS symptoms",
+      "id": 5
     }
   ]
 }
