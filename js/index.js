@@ -4,26 +4,6 @@ const ui = new UI();
 //eventListeners
 eventListeners();
 
-
-//functions
-// function callAPI(url, data, method, apiFunction){
-//   let xhr = new XMLHttpRequest();
-//   xhr.onreadystatechange = function(){
-//     if(this.readyState === 4 && this.status === 201 || this.readyState === 4 && this.status === 202){
-//       apiFunction(this.responseText);
-//     }
-//   };
-
-//   xhr.open(method, url, true);
-//   xhr.setRequestHeader('X-Requested-with', 'XMLHttpRequest');
-//   xhr.setRequestHeader('content-type', 'application/json');
-//   if(data){
-//     xhr.send(data);
-//   }else{
-//     xhr.send();
-//   }
-// }
-
 let count = 0;
 let amount = 0;
 let total = 0;
@@ -67,28 +47,18 @@ function addUsers(e){
        description: description
     };
 
-    if(clientName !== '' || diagnosis !== '' || location !== '' || age !== '' || medicalFee !== '' || date !== ''){
-        let url = 'http://localhost:3000/patients';
+      let url = 'http://localhost:3000/patients';
       fetch(url, {
           method: 'POST',
           body: JSON.stringify(result),
           headers:{
             'Content-Type': 'application/json'
           }
-      }).then(res => res.json())
-    //   .then(response => console.log('success:', JSON.stringify(response)))
-      .then(
-        ui.displayMessage("patient succesfully added", "success")
-    )
-    //   .catch(error => console.error('error', error));
-    e.preventDefault();
-     }
-     
-     else{
-         ui.displayMessage('please input all data before sending', "danger");
-     }
-    })
-    e.preventDefault();
+            }).then(res => res.json())
+            .then(ui.displayMessage("patient succesfully added", "success"))
+                e.preventDefault();
+                })
+                e.preventDefault();      
 }
 
 function displayData(){
